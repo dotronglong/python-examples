@@ -25,17 +25,23 @@ mysql> GRANT ALL PRIVILEGES ON dreamteam_db . * TO 'dt_admin'@'localhost';
 Query OK, 0 rows affected (0.00 sec)
 ```
 
+- Setup environment
+
+```bash
+export FLASK_CONFIG=development
+export FLASK_APP=run.py
+```
+
 - Run database migrations
 
 ```bash
 flask db init
 flask db migrate
+flask db upgrade
 ```
 
 - Start application
 
 ```bash
-export FLASK_CONFIG=development
-export FLASK_APP=run.py
 flask run
 ```
